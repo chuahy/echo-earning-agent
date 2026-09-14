@@ -161,7 +161,7 @@ async function tokuRail() {
 // authored PRs across the profullstack org; merged = pull_request.merged_at set. Fires once on a rise.
 async function githubPrs() {
   try {
-    const q = encodeURIComponent('author:Echolonius type:pr org:profullstack')
+    const q = encodeURIComponent('author:chuahy type:pr')
     const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'echo-earning-agent' }
     if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
     const r = await fetch(`https://api.github.com/search/issues?q=${q}&per_page=50`, { headers, signal: AbortSignal.timeout(10000) })
